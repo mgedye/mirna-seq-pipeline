@@ -7,6 +7,7 @@ use warnings;
 
 # ── Configuration ────────────────────────────────────────────
 # Number of underscore-delimited fields to keep as sample ID
+# Sample ID format: fields are joined by "_" - note that hyphens (-) within a field are NOT delimiters.
 # 1 = mouse (BB366)
 # 2 = human (AKTS_PRE)
 my $ID_FIELDS = 1;
