@@ -47,7 +47,7 @@ samples=$(ls "$RAW_DATA"/*_R1_001.fastq.gz \
 
 for sample in $samples; do
     echo "  Merging: $sample"
-    cat "$RAW_DATA/${sample}"*_R1.fastq.gz > "$MERGED/${sample}_R1.merged.fastq.gz"
+    cat "$RAW_DATA/${sample}"*_R1_001.fastq.gz > "$MERGED/${sample}_R1.merged.fastq.gz"
 done
 
 echo "  Done. Merged FASTQs in $MERGED"
