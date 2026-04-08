@@ -10,7 +10,7 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/silver/MITO"
+PROJECT="projects/silver/MUSCLE"
 RAW_DATA="${PROJECT}/raw-data/"
 ADAPTER="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 MIN_QUAL=20
