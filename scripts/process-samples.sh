@@ -10,8 +10,8 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/diabetic-small-genes"
-RAW_DATA="${PROJECT}/raw-data/AGRF_NXGSQCAGRF26010177-1_23GJL3LT3"
+PROJECT="projects/silver/MITO"
+RAW_DATA="${PROJECT}/raw-data/"
 ADAPTER="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 MIN_QUAL=20
 MIN_LEN=15
