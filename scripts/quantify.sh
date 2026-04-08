@@ -11,7 +11,7 @@ set -euo pipefail
 
 # ── Configuration ───────────────────────────────────────────
 PROJECT="projects/silver/MITO"
-DB="databases/MirGeneDB/mirbase_hsa_mature"
+DB="databases/miRbase/mirbase_hsa_mature"
 SCRIPTS="scripts"
 WORD_SIZE=19
 # ────────────────────────────────────────────────────────────
