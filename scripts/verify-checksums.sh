@@ -9,9 +9,9 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/silver/MITO"
+PROJECT="projects/silver/MUSCLE"
 RAW_DATA="${PROJECT}/raw-data/"
-CHECKSUM_FILE="md5sum.txt"
+CHECKSUM_FILE="md5sum_check.txt"
 LOG_DIR="${PROJECT}/logs"
 # ────────────────────────────────────────────────────────────
 
