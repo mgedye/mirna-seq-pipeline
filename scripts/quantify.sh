@@ -10,8 +10,8 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/diabetic-small-genes"
-DB="databases/MirGeneDB/3.0/MirGeneDB_mouse_mature"
+PROJECT="projects/silver/MITO"
+DB="databases/MirGeneDB/mirbase_hsa_mature"
 SCRIPTS="scripts"
 WORD_SIZE=19
 # ────────────────────────────────────────────────────────────
