@@ -40,9 +40,9 @@ echo "======================================"
 echo " Step 1: Merging lanes"
 echo "======================================"
 
-samples=$(ls "$RAW_DATA"/*_R1.fastq.gz \
+samples=$(ls "$RAW_DATA"/*_R1_001.fastq.gz \
     | xargs -n1 basename \
-    | sed -E 's/_L00[0-9]_R1\.fastq\.gz//' \
+    | sed -E 's/_L00[0-9]_R1_001\.fastq\.gz//' \
     | sort -u)
 
 for sample in $samples; do
