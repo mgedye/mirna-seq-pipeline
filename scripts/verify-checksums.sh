@@ -9,9 +9,9 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/diabetic-small-genes_mirbase"
-RAW_DATA="${PROJECT}/raw-data/AGRF_NXGSQCAGRF26010177-1_23GJL3LT3"
-CHECKSUM_FILE="checksums.md5"
+PROJECT="projects/silver/MITO"
+RAW_DATA="${PROJECT}/raw-data/"
+CHECKSUM_FILE="md5sum.txt"
 LOG_DIR="${PROJECT}/logs"
 # ────────────────────────────────────────────────────────────
 
