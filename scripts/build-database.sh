@@ -20,9 +20,9 @@ DB_DIR="databases"
 # ── Species lookup ───────────────────────────────────────────
 case "$SPECIES" in
     mouse) MIRBASE_GREP="Mus musculus"
-           MIRGENEDB_PREFIX="mmu" ;;
+           SPECIES_PREFIX="mmu" ;;
     human) MIRBASE_GREP="Homo sapiens"
-           MIRGENEDB_PREFIX="hsa" ;;
+           SPECIES_PREFIX="hsa" ;;
     *)     echo "ERROR: unsupported species: $SPECIES"; exit 1 ;;
 esac
 # ────────────────────────────────────────────────────────────
@@ -50,7 +50,7 @@ case "$SOURCE" in
         mkdir -p "$OUT_DIR"
         cd "$OUT_DIR"
 
-        if [[ -f "mirbase_${MIRGENEDB_PREFIX}_mature.nin" ]]; then
+        if [[ -f "mirbase_${SPECIES_PREFIX}_mature.nin" ]]; then
             echo "  Database already exists, skipping build."
         else
             if [[ ! -f "mature.fa" ]]; then
@@ -59,13 +59,13 @@ case "$SOURCE" in
             fi
 
             echo "  Extracting ${SPECIES} sequences..."
-            grep -A1 "$MIRBASE_GREP" mature.fa > mirbase_${MIRGENEDB_PREFIX}_mature.fa
+            grep -A1 "$MIRBASE_GREP" mature.fa > mirbase_${SPECIES_PREFIX}_mature.fa
 
             echo "  Building BLAST index..."
             makeblastdb \
-                -in mirbase_${MIRGENEDB_PREFIX}_mature.fa \
+                -in mirbase_${SPECIES_PREFIX}_mature.fa \
                 -dbtype nucl \
-                -out mirbase_${MIRGENEDB_PREFIX}_mature
+                -out mirbase_${SPECIES_PREFIX}_mature
         fi
         ;;
 
@@ -78,11 +78,11 @@ case "$SOURCE" in
             echo "  Database already exists, skipping download and build."
         else
             echo "  Downloading MirGeneDB mature sequences..."
-            wget https://mirgenedb.org/static/data/${MIRGENEDB_PREFIX}/${MIRGENEDB_PREFIX}-mature.fas
+            wget https://mirgenedb.org/static/data/${SPECIES_PREFIX}/${SPECIES_PREFIX}-mature.fas
 
             echo "  Building BLAST index..."
             makeblastdb \
-                -in ${MIRGENEDB_PREFIX}-mature.fas \
+                -in ${SPECIES_PREFIX}-mature.fas \
                 -dbtype nucl \
                 -out MirGeneDB_${SPECIES}_mature
         fi
