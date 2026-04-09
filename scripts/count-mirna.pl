@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# Usage: perl scripts/count-mirna.pl projects/small-genes/intermediates/05_blast/*_blast.txt > projects/small-genes/results/count-matrix.csv
+# Usage: perl scripts/count-mirna.pl projects/project-name/intermediates/05_blast/*_blast.txt > projects/project-name/results/count-matrix.csv
 
 use strict;
 use warnings;
