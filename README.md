@@ -6,7 +6,7 @@ Each project directory needs the following directory created manually:
 Raw microRNA sequencing data from the supplier should then be placed in this directory.
 
 
-Only pathways in the # ── Configuration ─────────────────────────────────────────── block should ever need to be modified based on the project and database intended to be used.
+Only pathways in the # ── Configuration ── block should ever need to be modified based on the project and database intended to be used.
 
 Run scripts in the following order:
 1. verify-checksums.sh
