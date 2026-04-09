@@ -10,7 +10,7 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/silver/MUSCLE"
+PROJECT="projects/matrx"
 DB="databases/miRbase/mirbase_hsa_mature"
 SCRIPTS="scripts"
 WORD_SIZE=19
