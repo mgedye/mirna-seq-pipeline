@@ -13,7 +13,7 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/diabetic-small-genes_mirbase"
+PROJECT="projects/matrx"
 ADAPTER="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
 REPORTS="${PROJECT}/intermediates/02_trimmed/reports"
 # ────────────────────────────────────────────────────────────
