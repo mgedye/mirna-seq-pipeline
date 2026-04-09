@@ -9,7 +9,7 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/silver/MUSCLE"
+PROJECT="projects/matrx"
 RAW_DATA="${PROJECT}/raw-data/"
 CHECKSUM_FILE="md5sum_check.txt"
 LOG_DIR="${PROJECT}/logs"
