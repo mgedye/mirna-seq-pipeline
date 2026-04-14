@@ -13,8 +13,9 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/matrx"
-ADAPTER="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
+CONFIG="$(dirname "$0")/../config.sh"
+[[ -f "$CONFIG" ]] || { echo "ERROR: config.sh not found. Copy config.sh.example to config.sh and fill in your values."; exit 1; }
+source "$CONFIG"
 REPORTS="${PROJECT}/intermediates/02_trimmed/reports"
 # ────────────────────────────────────────────────────────────
 
