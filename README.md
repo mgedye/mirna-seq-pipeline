@@ -1,12 +1,21 @@
 # README of pipeline for miRNA RNAseq analysis
 
+## Setup
+
+Copy `config.sh.example` to `config.sh` and fill in your values:
+
+```bash
+cp config.sh.example config.sh
+```
+
+`config.sh` is gitignored and will not be committed. 
+Edit it to set your project directory, adapter sequence, and database path. 
+This is the only file that should need to change between projects.
+
 Each project directory needs the following directory created manually:
 - raw-data/
 
 Raw microRNA sequencing data from the supplier should then be placed in this directory.
-
-
-Only pathways in the # ── Configuration ── block should ever need to be modified based on the project and database intended to be used.
 
 Run scripts in the following order:
 1. verify-checksums.sh
