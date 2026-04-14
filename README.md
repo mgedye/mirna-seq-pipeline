@@ -1,5 +1,12 @@
 # README of pipeline for miRNA RNAseq analysis
 
+## Dependencies
+
+- [fastp](https://github.com/opengene/fastp) — adapter trimming and QC
+- [BLAST+](https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html) — sequence alignment
+- Perl — count matrix generation
+- Python 3 — adapter QC reporting
+
 ## Setup
 
 Copy `config.sh.example` to `config.sh` and fill in your values:
