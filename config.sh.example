@@ -1,0 +1,14 @@
+# ── Project ──────────────────────────────────────────────────
+PROJECT="projects/your-project-name"
+
+# ── Sequencing ───────────────────────────────────────────────
+ADAPTER="NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"   # 3' adapter sequence for trimming
+MIN_QUAL=20                                     # minimum base quality (fastp -q)
+MIN_LEN=15                                      # minimum read length after trimming (fastp -l)
+
+# ── Database (BLAST) ─────────────────────────────────────────
+DB="databases/miRbase/mirbase_hsa_mature"       # path to BLAST database (no extension)
+WORD_SIZE=19                                    # BLAST word size
+
+# ── Files ────────────────────────────────────────────────────
+CHECKSUM_FILE="md5sum_check.txt"                # md5 checksum file in raw-data/
