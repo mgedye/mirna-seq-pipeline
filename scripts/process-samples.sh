@@ -10,11 +10,10 @@ set -euo pipefail
 # ============================================================
 
 # ── Configuration ───────────────────────────────────────────
-PROJECT="projects/matrx"
+CONFIG="$(dirname "$0")/../config.sh"
+[[ -f "$CONFIG" ]] || { echo "ERROR: config.sh not found. Copy config.sh.example to config.sh and fill in your values."; exit 1; }
+source "$CONFIG"
 RAW_DATA="${PROJECT}/raw-data/"
-ADAPTER="AGATCGGAAGAGCACACGTCTGAACTCCAGTCA"
-MIN_QUAL=20
-MIN_LEN=15
 # ────────────────────────────────────────────────────────────
 
 # ── Output directories (created by this script) ─────────────
