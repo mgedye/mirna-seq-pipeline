@@ -10,7 +10,7 @@ use warnings;
 # Sample ID format: fields are joined by "_" - note that hyphens (-) within a field are NOT delimiters.
 # 1 = mouse (BB366)
 # 2 = human (AKTS_PRE)
-my $ID_FIELDS = 1;
+my $ID_FIELDS = 2;
 # ─────────────────────────────────────────────────────────────
 
 my %counts;  # counts{miRNA}{sample} = count
