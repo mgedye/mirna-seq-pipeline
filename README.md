@@ -15,9 +15,16 @@ Copy `config.sh.example` to `config.sh` and fill in your values:
 cp config.sh.example config.sh
 ```
 
-`config.sh` is gitignored and will not be committed. 
-Edit it to set your project directory, adapter sequence, and database path. 
+`config.sh` is gitignored and will not be committed.
+Edit it to set your project directory, adapter sequence, database path, and R1 filename suffix.
 This is the only file that should need to change between projects.
+
+**`R1_SUFFIX`** must match the suffix of your R1 FASTQ filenames after the sample name, so that sample names can be derived correctly. Two common patterns:
+
+| Convention | Example filename | `R1_SUFFIX` value |
+|---|---|---|
+| Standard Illumina (BCL2Fastq) | `SAMPLE_L001_R1_001.fastq.gz` | `_L001_R1_001.fastq.gz` |
+| AGRF / barcode-in-name | `SAMPLE_BARCODE_L007_R1.fastq.gz` | `_L007_R1.fastq.gz` |
 
 Each project directory needs the following directory created manually:
 - raw-data/
