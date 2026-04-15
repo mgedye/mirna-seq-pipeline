@@ -13,7 +13,7 @@ set -euo pipefail
 CONFIG="$(dirname "$0")/../config.sh"
 [[ -f "$CONFIG" ]] || { echo "ERROR: config.sh not found. Copy config.sh.example to config.sh and fill in your values."; exit 1; }
 source "$CONFIG"
-RAW_DATA="${PROJECT}/raw-data/"
+RAW_DATA="${PROJECT}/raw-data"
 # ────────────────────────────────────────────────────────────
 
 # ── Output directories (created by this script) ─────────────
@@ -39,14 +39,14 @@ echo "======================================"
 echo " Step 1: Merging lanes"
 echo "======================================"
 
-samples=$(ls "$RAW_DATA"/*_R1_001.fastq.gz \
+samples=$(ls "$RAW_DATA"/*_R1*.fastq.gz \
     | xargs -n1 basename \
-    | sed -E 's/_L00[0-9]_R1_001\.fastq\.gz//' \
+    | sed -E "s/${R1_SUFFIX}//" \
     | sort -u)
 
 for sample in $samples; do
     echo "  Merging: $sample"
-    cat "$RAW_DATA/${sample}"*_R1_001.fastq.gz > "$MERGED/${sample}_R1.merged.fastq.gz"
+    cat "$RAW_DATA/${sample}"*"${R1_SUFFIX}" > "$MERGED/${sample}_R1.merged.fastq.gz"
 done
 
 echo "  Done. Merged FASTQs in $MERGED"
