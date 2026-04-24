@@ -1,4 +1,4 @@
-# README of pipeline for miRNA RNAseq analysis
+# Alignment Pipeline for microRNA Sequencing Results for Downstream Differential Expression Analysis
 
 ## Dependencies
 
