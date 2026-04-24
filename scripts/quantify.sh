@@ -78,7 +78,7 @@ if (( ${#BLAST_FILES[@]} == 0 )); then
     exit 1
 fi
 
-perl "${SCRIPTS}/count-mirna.pl" "${BLAST_FILES[@]}" \
+SAMPLE_ID_FIELDS="$SAMPLE_ID_FIELDS" perl "${SCRIPTS}/count-mirna.pl" "${BLAST_FILES[@]}" \
     > "${RESULTS}/count-matrix.csv"
 
 echo "  Done. Count matrix written to ${RESULTS}/count-matrix.csv"

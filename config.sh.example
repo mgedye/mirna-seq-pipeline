@@ -16,3 +16,9 @@ WORD_SIZE=19                                    # BLAST word size
 
 # ── Files ────────────────────────────────────────────────────
 CHECKSUM_FILE="md5sum_check.txt"                # md5 checksum file in raw-data/
+
+# ── Count matrix ─────────────────────────────────────────────
+# Underscore-delimited fields to keep as sample ID in the count matrix.
+# Use 0 to keep the full basename. Set to however many leading fields
+# uniquely identify each sample (e.g. 2 for AKTS_PRE, 5 for date_Species_Tissue_RNA_N).
+SAMPLE_ID_FIELDS=2

@@ -6,11 +6,9 @@ use strict;
 use warnings;
 
 # ── Configuration ────────────────────────────────────────────
-# Number of underscore-delimited fields to keep as sample ID
-# Sample ID format: fields are joined by "_" - note that hyphens (-) within a field are NOT delimiters.
-# 1 = mouse (BB366)
-# 2 = human (AKTS_PRE)
-my $ID_FIELDS = 2;
+# Number of underscore-delimited fields to keep as sample ID.
+# Set via SAMPLE_ID_FIELDS in config.sh. 0 = keep full basename.
+my $ID_FIELDS = $ENV{SAMPLE_ID_FIELDS} // 2;
 # ─────────────────────────────────────────────────────────────
 
 my %counts;  # counts{miRNA}{sample} = count
@@ -21,7 +19,10 @@ foreach my $file (@ARGV) {
     $basename =~ s/_blast\.txt$//;             # strip _blast.txt
     $basename =~ s/\.collapsed$//;             # strip .collapsed
     $basename =~ s/_R1$//;                     # strip _R1
-    my $sample = join("_", (split(/_/, $basename))[0..$ID_FIELDS-1]);
+    my @fields = split(/_/, $basename);
+    my $sample = $ID_FIELDS == 0
+        ? $basename
+        : join("_", @fields[0 .. ($ID_FIELDS - 1 < $#fields ? $ID_FIELDS - 1 : $#fields)]);
     push @samples, $sample;
     open(my $fh, '<', $file) or die "Can't open $file: $!";
     while (<$fh>) {
