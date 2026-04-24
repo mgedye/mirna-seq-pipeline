@@ -16,7 +16,7 @@ cp config.sh.example config.sh
 ```
 
 `config.sh` is gitignored and will not be committed.
-Edit it to set your project directory, adapter sequence, database path, and R1 filename suffix.
+Edit it to set your project directory, adapter sequence, database path, R1 filename suffix, and number of _ delimeters in the sample filename.
 This is the only file that should need to change between projects.
 
 **`R1_SUFFIX`** must match the suffix of your R1 FASTQ filenames after the sample name, so that sample names can be derived correctly. Two common patterns:
