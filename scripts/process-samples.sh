@@ -41,7 +41,7 @@ echo "======================================"
 
 samples=$(ls "$RAW_DATA"/*_R1*.fastq.gz \
     | xargs -n1 basename \
-    | sed -E "s/${R1_SUFFIX}//" \
+    | sed -E "s/_L[0-9]+${R1_SUFFIX}//" \
     | sort -u)
 
 for sample in $samples; do

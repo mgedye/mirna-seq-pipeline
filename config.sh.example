@@ -5,10 +5,10 @@ PROJECT="projects/your-project-name"
 ADAPTER="NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"   # 3' adapter sequence for trimming
 MIN_QUAL=20                                     # minimum base quality (fastp -q)
 MIN_LEN=15                                      # minimum read length after trimming (fastp -l)
-# Suffix to strip from R1 filenames to derive sample names.
-# Standard Illumina (BCL2Fastq):  "_L001_R1_001.fastq.gz"
-# AGRF / barcode-in-name style:   "_L007_R1.fastq.gz"  (replace L007 with your lane)
-R1_SUFFIX="_L001_R1_001.fastq.gz"
+# Lane-independent R1 suffix (the script strips the _L[0-9]+ lane segment automatically).
+# Standard Illumina (BCL2Fastq):  "_R1_001.fastq.gz"
+# AGRF / barcode-in-name style:   "_R1.fastq.gz"
+R1_SUFFIX="_R1_001.fastq.gz"
 
 # ── Database (BLAST) ─────────────────────────────────────────
 DB="databases/miRbase/mirbase_hsa_mature"       # path to BLAST database (no extension)
